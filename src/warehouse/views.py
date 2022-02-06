@@ -6,7 +6,7 @@ from .forms import  ItemCreateForm
 
 
 def home(request):
-    title = 'Witaja na naszej stronie!'
+    title = 'Witaj  na naszej stronie!'
     form = 'jakiś tam napis'
     context = {
         "title": title,

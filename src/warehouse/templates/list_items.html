@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{title}}</title>
-  </head>
-  <body>
-    {% for instance in queryset %}
-    {{instance.item_name}}, {{instance.quantity}} <br>
-    {% endfor %}
-
-  </body>
-</html>
+{% extends 'home.html' %}
+{% block content %}
+    <main class="container">
+      <div class="bg-light p-5 rounded">
+        <h1>{{title}}</h1>
+        <p class="lead">
+          {% for instance in queryset %}
+          {{instance.item_name}}, {{instance.quantity}} <br>
+          {% endfor %}
+        </p>
+        <a
+          class="btn btn-lg btn-primary"
+          href="../components/navbar/"
+          role="button"
+          >View navbar docs &raquo;</a
+        >
+      </div>
+    </main>
+{% endblock content %}
