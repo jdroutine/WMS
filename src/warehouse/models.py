@@ -1,6 +1,3 @@
-from email.policy import default
-from sqlite3 import IntegrityError
-from unicodedata import category
 from django.db import models
 
 # Create your models here.
