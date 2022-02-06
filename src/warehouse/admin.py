@@ -7,7 +7,7 @@ from .models import Item
 
 
 class ItemCreateAdmin(admin.ModelAdmin):
-    list_display = ['category', 'item_name', 'quantity']
+    list_display = ['item_name', 'category', 'brand', 'quantity']
     form = ItemCreateForm
     list_filter = ['category']
     search_fields = ['category', 'item_name']
