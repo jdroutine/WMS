@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Item
 from .forms import  ItemCreateForm
 
@@ -28,6 +28,7 @@ def add_item(request):
     form = ItemCreateForm(request.POST or None)
     if form.is_valid():
         form.save()
+        return redirect('/list_items')
     context = {
         "form": form,
         "title": "Dodaj towar",
