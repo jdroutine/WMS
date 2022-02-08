@@ -6,8 +6,8 @@ from .forms import  ItemCreateForm
 
 
 def home(request):
-    title = 'Witaj  na naszej stronie!'
-    form = 'jakiś tam napis'
+    title = 'Welcome on our ste!'
+    form = 'Fuck PiS'
     context = {
         "title": title,
     }
@@ -15,7 +15,7 @@ def home(request):
 
 
 def list_items(request):
-    title = 'Lista towarów'
+    title = 'List of items'
     queryset = Item.objects.all()
     context = {
         "title": title,
@@ -31,6 +31,6 @@ def add_item(request):
         return redirect('/list_items')
     context = {
         "form": form,
-        "title": "Dodaj towar",
+        "title": "Add item",
     }
     return render(request, "add_item.html", context)
