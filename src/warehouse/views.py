@@ -1,6 +1,6 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from .models import Item
-from .forms import  ItemCreateForm
+from .forms import ItemCreateForm, ItemSearchForm
 
 # Create your views here.
 
@@ -16,11 +16,22 @@ def home(request):
 
 def list_items(request):
     title = 'List of items'
+    form = ItemSearchForm(request.POST or None)
     queryset = Item.objects.all()
     context = {
         "title": title,
-        "queryset": queryset
+        "queryset": queryset,
+        "form": form,
     }
+    if request.method == 'POST':
+        queryset = Item.objects.filter(category__icontains=form['category'].value(),
+                                       item_name__icontains=form['item_name'].value()
+                                       )
+        context = {
+            "form": form,
+            "title": title,
+            "queryset": queryset,
+        }
     return render(request, "list_items.html", context)
 
 

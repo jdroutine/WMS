@@ -6,3 +6,9 @@ class ItemCreateForm(forms.ModelForm):
     class Meta:
         model = Item
         fields = ['item_name', 'category', 'brand', 'quantity']
+
+
+class ItemSearchForm(forms.ModelForm):
+    class Meta:
+        model = Item
+        fields = ['category', 'item_name']

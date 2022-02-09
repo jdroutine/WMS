@@ -1,8 +1,14 @@
 {% extends 'home.html' %} 
+{% load crispy_forms_tags %}
 {% block content %}
 <main class="container">
   <div class="bg-light p-5 rounded">
     <h1>{{title}}</h1>
+    <form action="" method="POST">{% csrf_token %}
+      {{form|crispy}}
+      <input type="submit" value="Search">
+    </form>
+    <br>
     <p class="lead">
     
       <table class="table" id="item-table">
