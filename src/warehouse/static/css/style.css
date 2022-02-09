@@ -1,3 +1,17 @@
-body{
-    background-color: aqua;
+#item-table {
+  font-size: 13px;
+  text-align: center;
+  width: 95%;
+  margin: auto;
 }
+#item-table tr:nth-child(odd) {
+  background: rgb(161, 110, 110);
+}
+#item-table tr:nth-child(even) {
+  background: rgb(187, 94, 94);
+}
+th {
+  background-color: firebrick;
+  color: white;
+}
+ 
