@@ -1,3 +1,4 @@
+from pyexpat import model
 from django import forms
 from .models import Item
 
@@ -24,10 +25,12 @@ class ItemCreateForm(forms.ModelForm):
         return item_name
 
 
-5
-
-
 class ItemSearchForm(forms.ModelForm):
     class Meta:
         model = Item
         fields = ['category', 'item_name']
+
+class ItemUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Item
+        fields = ['category','item_name', 'quantity']
